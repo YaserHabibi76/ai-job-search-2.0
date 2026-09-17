@@ -29,9 +29,12 @@ Canonical facts for the job search system. Update this file directly when anythi
 Floor is intentionally wide for now — revisit after ~1 week of real listings/pay data.
 
 ## Must-haves / no-gos
-- Must-have: fully remote, W2 preferred (flag 1099/commission-only as `comp_type = 1099` in tracker rather than rejecting outright — surface but deprioritize).
-- No-go: postings that are remote-labeled but contain residency/relocation requirements not matching an active license state.
-- No-go: unpaid/equity-only or clearly predatory "unlimited earning potential" listings with no base.
+- Must-have: fully remote.
+- **Insurance track: 1099/commission-only is fine** — do not deprioritize purely for `comp_type = 1099`. Still tag `comp_type` in the tracker for visibility, and still exclude clearly predatory/pyramid-style setups (see no-go below) — but a legitimate commission-based producer role should rank on fit, not get auto-bumped to Long Shot for being 1099.
+- **Analyst track: W2 preferred**, flag 1099/contract as `comp_type = 1099` or `contract` rather than rejecting outright — surface but deprioritize.
+- No-go (both tracks): postings that are remote-labeled but contain residency/relocation requirements not matching an active license state.
+- No-go (both tracks): unpaid/equity-only or clearly predatory "unlimited earning potential" listings with no realistic path to income (e.g. pay-to-play, upfront lead-purchase schemes).
+- Salary floor ($45k-$55k) applies to base pay where stated; for insurance commission-only roles with no base, don't reject on salary — note `salary = commission-only, no base stated` instead.
 
 ## Notifications
 - Daily automated run sends a Gmail digest to yaserhabibi27@gmail.com summarizing new matches per track, plus writes the day's shortlist file.
