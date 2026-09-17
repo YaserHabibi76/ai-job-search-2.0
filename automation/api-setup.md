@@ -19,9 +19,9 @@ Note: this repo is public and the cloud routine platform has no secrets-storage 
 1. Request a key at https://jooble.org/api/about
 2. Approval is usually fast (email-based).
 
-**api_key:** `<fill in>`
+**api_key:** `73d3495a-c150-4493-8686-79ce1c87d164`
 
-Example query shape: `POST https://jooble.org/api/{api_key}` with JSON body `{"keywords": "business intelligence analyst", "location": "remote"}`
+**Verified working query shape** (tested 2026-09-17, returned real listings with company/salary/link): `POST https://jooble.org/api/73d3495a-c150-4493-8686-79ce1c87d164` with header `Content-Type: application/json` and JSON body `{"keywords": "<keyword phrase> remote", "location": "remote"}`. Response includes `title`, `location`, `company`, `salary`, `link`, `snippet` per job. Rate limit: Jooble's signup email states "default limit of 500 requests" without specifying a time window — treat this conservatively (budget only a few queries/day across both tracks) until confirmed whether it resets daily/monthly or is a lifetime cap.
 
 ## 3. JSearch via RapidAPI (freemium)
 1. Sign up at https://rapidapi.com/ and subscribe to the JSearch API (free tier).
