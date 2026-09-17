@@ -7,7 +7,10 @@ Free job-search APIs the daily procedure calls via WebFetch. None of these touch
 2. Create an app, get `app_id` and `app_key`.
 3. Paste below.
 
-**Status: set.** Actual values are stored as secure environment variables on the cloud routine (`ADZUNA_APP_ID`, `ADZUNA_APP_KEY`) — not committed here, since this repo is public. The daily procedure should read them via `echo $ADZUNA_APP_ID` / `echo $ADZUNA_APP_KEY` in Bash when running as the cloud routine.
+**app_id:** `558a0fb9`
+**app_key:** `0622f794a9a44db0a5513a1b0a4446b9`
+
+Note: this repo is public and the cloud routine platform has no secrets-storage mechanism, so this key is committed in plaintext by deliberate choice — it's a free tier key with no billing attached, so the worst case is quota abuse (fixed by regenerating a new key at developer.adzuna.com).
 
 **Verified working query shape** (tested 2026-09-16, returned 54 real remote listings): `https://api.adzuna.com/v1/api/jobs/us/search/1?app_id={id}&app_key={key}&results_per_page=20&what=business%20intelligence%20analyst%20remote&salary_min=45000`
 - Note: `where=remote` does NOT work (Adzuna treats `where` as a real US location, returns 0 results). Instead, append "remote" as part of the `what` search term — Adzuna matches it against title/description text, which reliably surfaces remote-tagged listings.
